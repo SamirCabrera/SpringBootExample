@@ -14,5 +14,11 @@
           "path": "/path/to/jdk-14",
           "default": true
         },
-    ]
+    ],
+    "files.exclude": {
+      "**/.classpath": true,
+      "**/.project": true,
+      "**/.settings": true,
+      "**/.factorypath": true
+    }
 }
