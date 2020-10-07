@@ -9,4 +9,14 @@ public class TestHtmlController {
     public String Test() {
         return "testMessage";
     }
+
+    @GetMapping("/test2Html")
+    public String Test2() {
+        return "test2"; 
+    }
+
+    @GetMapping("/test3Html")
+    public String Test3() {
+        return "test3";
+    }
 }

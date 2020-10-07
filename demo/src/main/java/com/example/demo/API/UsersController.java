@@ -8,6 +8,8 @@ import java.util.List;
 import com.example.demo.Model.User;
 import com.example.demo.Model.UserV2;
 
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -55,6 +57,15 @@ public class UsersController {
             }
         }
         return null;
+    }
+
+    @GetMapping("/resUsers/{id}")
+    public ResponseEntity<User> UserById(@PathVariable("id") int id) {
+        try {
+            return new ResponseEntity<>(Search(id), HttpStatus.OK);
+        } catch(Exception ex) {
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        } 
     }
 
     @PostMapping("/user")
